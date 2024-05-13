@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>ip信息收集 | web_blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="ip信息收集：1.DNS类型1.本地域名服务器，根域名服务器，顶级域名，授权域名2.迭代查询，递归查询2.ping&#x2F;nslookupping:应用层命令：nslookup -type&#x3D;&quot;MS&quot; baidu.com 3.IP归属：1.ipwhois.cnnic.cn 2.ip138.com 4.CDN服务：要找到CDN背后的真实ip1.超级ping2.历史DNS:dns">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ip信息收集">
+<meta property="og:url" content="http://example.com/2024/05/10/ip%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/index.html">
+<meta property="og:site_name" content="web_blog">
+<meta property="og:description" content="ip信息收集：1.DNS类型1.本地域名服务器，根域名服务器，顶级域名，授权域名2.迭代查询，递归查询2.ping&#x2F;nslookupping:应用层命令：nslookup -type&#x3D;&quot;MS&quot; baidu.com 3.IP归属：1.ipwhois.cnnic.cn 2.ip138.com 4.CDN服务：要找到CDN背后的真实ip1.超级ping2.历史DNS:dns">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-05-10T07:35:28.000Z">
+<meta property="article:modified_time" content="2024-05-13T07:40:04.708Z">
+<meta property="article:author" content="Xhani">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="web_blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">web_blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-ip信息收集" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/05/10/ip%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" class="article-date">
+  <time class="dt-published" datetime="2024-05-10T07:35:28.000Z" itemprop="datePublished">2024-05-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      ip信息收集
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="ip信息收集："><a href="#ip信息收集：" class="headerlink" title="ip信息收集："></a>ip信息收集：</h1><h2 id="1-DNS类型"><a href="#1-DNS类型" class="headerlink" title="1.DNS类型"></a>1.DNS类型</h2><h5 id="1-本地域名服务器，根域名服务器，顶级域名，授权域名"><a href="#1-本地域名服务器，根域名服务器，顶级域名，授权域名" class="headerlink" title="1.本地域名服务器，根域名服务器，顶级域名，授权域名"></a>1.本地域名服务器，根域名服务器，顶级域名，授权域名</h5><h5 id="2-迭代查询，递归查询"><a href="#2-迭代查询，递归查询" class="headerlink" title="2.迭代查询，递归查询"></a>2.迭代查询，递归查询</h5><h2 id="2-ping-nslookup"><a href="#2-ping-nslookup" class="headerlink" title="2.ping&#x2F;nslookup"></a>2.ping&#x2F;nslookup</h2><h5 id="ping-应用层"><a href="#ping-应用层" class="headerlink" title="ping:应用层"></a>ping:应用层</h5><p>命令：<code>nslookup -type=&quot;MS&quot; baidu.com</code></p>
+<h2 id="3-IP归属："><a href="#3-IP归属：" class="headerlink" title="3.IP归属："></a>3.IP归属：</h2><p>1.ipwhois.cnnic.cn</p>
+<p>2.ip138.com</p>
+<h2 id="4-CDN服务："><a href="#4-CDN服务：" class="headerlink" title="4.CDN服务："></a>4.CDN服务：</h2><h4 id="要找到CDN背后的真实ip"><a href="#要找到CDN背后的真实ip" class="headerlink" title="要找到CDN背后的真实ip"></a>要找到CDN背后的真实ip</h4><h6 id="1-超级ping"><a href="#1-超级ping" class="headerlink" title="1.超级ping"></a>1.超级ping</h6><h6 id="2-历史DNS-dnshistory"><a href="#2-历史DNS-dnshistory" class="headerlink" title="2.历史DNS:dnshistory"></a>2.历史DNS:dnshistory</h6><h6 id="3-通过子域名"><a href="#3-通过子域名" class="headerlink" title="3.通过子域名"></a>3.通过子域名</h6><h6 id="4-国外主机解析-dnscheck-webpagetest-org"><a href="#4-国外主机解析-dnscheck-webpagetest-org" class="headerlink" title="4.国外主机解析:dnscheck,webpagetest.org"></a>4.国外主机解析:dnscheck,webpagetest.org</h6><h6 id="5-邮件，SSL证书，手机抓包"><a href="#5-邮件，SSL证书，手机抓包" class="headerlink" title="5.邮件，SSL证书，手机抓包"></a>5.邮件，SSL证书，手机抓包</h6>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2024/05/10/ip%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" data-id="clw4nm5gt0000dowz9xeofl82" data-title="ip信息收集" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/05/10/%E7%AB%AF%E5%8F%A3%E4%BF%A1%E6%81%AF/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          端口信息
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/11/17/%E5%9F%9F%E5%90%8D%E4%BF%A1%E6%81%AF/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">域名信息收集</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">五月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/05/13/index/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/10/%E7%AB%AF%E5%8F%A3%E4%BF%A1%E6%81%AF/">端口信息</a>
+          </li>
+        
+          <li>
+            <a href="/2024/05/10/ip%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">ip信息收集</a>
+          </li>
+        
+          <li>
+            <a href="/2023/11/17/%E5%9F%9F%E5%90%8D%E4%BF%A1%E6%81%AF/">域名信息收集</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 Xhani<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
