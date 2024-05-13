@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-05-10T07:45:41.802Z</updated>
+  <updated>2024-05-13T08:47:12.187Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,12 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>test3</title>
-    <link href="http://example.com/2024/05/10/test3/"/>
-    <id>http://example.com/2024/05/10/test3/</id>
+    <title>端口信息</title>
+    <link href="http://example.com/2024/05/10/%E7%AB%AF%E5%8F%A3%E4%BF%A1%E6%81%AF/"/>
+    <id>http://example.com/2024/05/10/%E7%AB%AF%E5%8F%A3%E4%BF%A1%E6%81%AF/</id>
     <published>2024-05-10T07:45:41.000Z</published>
-    <updated>2024-05-10T07:45:41.802Z</updated>
+    <updated>2024-05-13T08:47:12.187Z</updated>
     
+    <content type="html"><![CDATA[<h2 id="1-端口扫描和代码实现："><a href="#1-端口扫描和代码实现：" class="headerlink" title="1.端口扫描和代码实现："></a>1.端口扫描和代码实现：</h2><p>1.<code>windows :netstat -aon|findstr 3306</code></p><p><code>linux:netstat -an|grep 3306</code></p><p>2.对端口发数据包扫：</p><p>命令：<code>wget ip 80</code></p><p><code>telnet ip 80</code></p><p><code>nc -vz ip 445</code></p><p>3.工具</p><p>扫描主机，端口，探测操作系统，软件版本<strong>zenmap</strong></p><p>nmap 使用文档 </p><p><strong>dirsearch脚本</strong></p><p><strong>masscan</strong></p><p>4.端口类型：</p><p>文件共享：</p><p>远程连接：</p><p>web应用：</p><p>数据库服务</p><p>网路常见端口</p><p>特殊服务端口</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;1-端口扫描和代码实现：&quot;&gt;&lt;a href=&quot;#1-端口扫描和代码实现：&quot; class=&quot;headerlink&quot; title=&quot;1.端口扫描和代码实现：&quot;&gt;&lt;/a&gt;1.端口扫描和代码实现：&lt;/h2&gt;&lt;p&gt;1.&lt;code&gt;windows :netstat -aon|</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ip信息收集</title>
+    <link href="http://example.com/2024/05/10/ip%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
+    <id>http://example.com/2024/05/10/ip%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</id>
+    <published>2024-05-10T07:35:28.000Z</published>
+    <updated>2024-05-13T07:40:04.708Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="ip信息收集："><a href="#ip信息收集：" class="headerlink" title="ip信息收集："></a>ip信息收集：</h1><h2 id="1-DNS类型"><a href="#1-DNS类型" class="headerlink" title="1.DNS类型"></a>1.DNS类型</h2><h5 id="1-本地域名服务器，根域名服务器，顶级域名，授权域名"><a href="#1-本地域名服务器，根域名服务器，顶级域名，授权域名" class="headerlink" title="1.本地域名服务器，根域名服务器，顶级域名，授权域名"></a>1.本地域名服务器，根域名服务器，顶级域名，授权域名</h5><h5 id="2-迭代查询，递归查询"><a href="#2-迭代查询，递归查询" class="headerlink" title="2.迭代查询，递归查询"></a>2.迭代查询，递归查询</h5><h2 id="2-ping-nslookup"><a href="#2-ping-nslookup" class="headerlink" title="2.ping&#x2F;nslookup"></a>2.ping&#x2F;nslookup</h2><h5 id="ping-应用层"><a href="#ping-应用层" class="headerlink" title="ping:应用层"></a>ping:应用层</h5><p>命令：<code>nslookup -type=&quot;MS&quot; baidu.com</code></p><h2 id="3-IP归属："><a href="#3-IP归属：" class="headerlink" title="3.IP归属："></a>3.IP归属：</h2><p>1.ipwhois.cnnic.cn</p><p>2.ip138.com</p><h2 id="4-CDN服务："><a href="#4-CDN服务：" class="headerlink" title="4.CDN服务："></a>4.CDN服务：</h2><h4 id="要找到CDN背后的真实ip"><a href="#要找到CDN背后的真实ip" class="headerlink" title="要找到CDN背后的真实ip"></a>要找到CDN背后的真实ip</h4><h6 id="1-超级ping"><a href="#1-超级ping" class="headerlink" title="1.超级ping"></a>1.超级ping</h6><h6 id="2-历史DNS-dnshistory"><a href="#2-历史DNS-dnshistory" class="headerlink" title="2.历史DNS:dnshistory"></a>2.历史DNS:dnshistory</h6><h6 id="3-通过子域名"><a href="#3-通过子域名" class="headerlink" title="3.通过子域名"></a>3.通过子域名</h6><h6 id="4-国外主机解析-dnscheck-webpagetest-org"><a href="#4-国外主机解析-dnscheck-webpagetest-org" class="headerlink" title="4.国外主机解析:dnscheck,webpagetest.org"></a>4.国外主机解析:dnscheck,webpagetest.org</h6><h6 id="5-邮件，SSL证书，手机抓包"><a href="#5-邮件，SSL证书，手机抓包" class="headerlink" title="5.邮件，SSL证书，手机抓包"></a>5.邮件，SSL证书，手机抓包</h6>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;ip信息收集：&quot;&gt;&lt;a href=&quot;#ip信息收集：&quot; class=&quot;headerlink&quot; title=&quot;ip信息收集：&quot;&gt;&lt;/a&gt;ip信息收集：&lt;/h1&gt;&lt;h2 id=&quot;1-DNS类型&quot;&gt;&lt;a href=&quot;#1-DNS类型&quot; class=&quot;headerlink</summary>
+      
     
     
     
