@@ -51,8 +51,8 @@
   
   <entry>
     <title>test1</title>
-    <link href="http://example.com/2023/11/17/test1/"/>
-    <id>http://example.com/2023/11/17/test1/</id>
+    <link href="http://example.com/2023/11/17/ip%E6%9F%A5%E6%89%BE/"/>
+    <id>http://example.com/2023/11/17/ip%E6%9F%A5%E6%89%BE/</id>
     <published>2023-11-17T08:57:59.000Z</published>
     <updated>2023-11-17T08:57:59.789Z</updated>
     
