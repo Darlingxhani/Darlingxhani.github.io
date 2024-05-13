@@ -34,14 +34,14 @@
     <link href="http://example.com/2024/05/10/test2/"/>
     <id>http://example.com/2024/05/10/test2/</id>
     <published>2024-05-10T07:35:28.000Z</published>
-    <updated>2024-05-10T08:02:40.735Z</updated>
+    <updated>2024-05-13T07:16:32.134Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="this-is-my-first-blog"><a href="#this-is-my-first-blog" class="headerlink" title="this is my first blog"></a>this is my first blog</h1><h2 id="1"><a href="#1" class="headerlink" title="* 1"></a>* 1</h2><h2 id="2"><a href="#2" class="headerlink" title="*2"></a>*2</h2>]]></content>
+    <content type="html"><![CDATA[<h1 id="ip信息收集："><a href="#ip信息收集：" class="headerlink" title="ip信息收集："></a>ip信息收集：</h1><h2 id="1-DNS类型"><a href="#1-DNS类型" class="headerlink" title="1.DNS类型"></a>1.DNS类型</h2><h5 id="1-本地域名服务器，根域名服务器，顶级域名，授权域名"><a href="#1-本地域名服务器，根域名服务器，顶级域名，授权域名" class="headerlink" title="1.本地域名服务器，根域名服务器，顶级域名，授权域名"></a>1.本地域名服务器，根域名服务器，顶级域名，授权域名</h5><h2 id="2-ping-nslookup"><a href="#2-ping-nslookup" class="headerlink" title="2.ping&#x2F;nslookup"></a>2.ping&#x2F;nslookup</h2><h2 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h2>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;this-is-my-first-blog&quot;&gt;&lt;a href=&quot;#this-is-my-first-blog&quot; class=&quot;headerlink&quot; title=&quot;this is my first blog&quot;&gt;&lt;/a&gt;this is my first blog&lt;/</summary>
+    <summary type="html">&lt;h1 id=&quot;ip信息收集：&quot;&gt;&lt;a href=&quot;#ip信息收集：&quot; class=&quot;headerlink&quot; title=&quot;ip信息收集：&quot;&gt;&lt;/a&gt;ip信息收集：&lt;/h1&gt;&lt;h2 id=&quot;1-DNS类型&quot;&gt;&lt;a href=&quot;#1-DNS类型&quot; class=&quot;headerlink</summary>
       
     
     
@@ -50,12 +50,19 @@
   </entry>
   
   <entry>
-    <title>ip查找</title>
-    <link href="http://example.com/2023/11/17/ip%E6%9F%A5%E6%89%BE/"/>
-    <id>http://example.com/2023/11/17/ip%E6%9F%A5%E6%89%BE/</id>
+    <title>域名信息收集</title>
+    <link href="http://example.com/2023/11/17/%E5%9F%9F%E5%90%8D%E4%BF%A1%E6%81%AF/"/>
+    <id>http://example.com/2023/11/17/%E5%9F%9F%E5%90%8D%E4%BF%A1%E6%81%AF/</id>
     <published>2023-11-17T08:57:59.000Z</published>
-    <updated>2024-05-13T06:26:48.674Z</updated>
+    <updated>2024-05-13T07:12:58.790Z</updated>
     
+    <content type="html"><![CDATA[<h1 id="1-域名信息"><a href="#1-域名信息" class="headerlink" title="1.域名信息"></a>1.域名信息</h1><h2 id="1-分类："><a href="#1-分类：" class="headerlink" title="1.分类："></a>1.分类：</h2><p>国际域名：com,net,org,gov,edu,mil,int</p><p>国别：cn,uk,us,</p><p>新顶级域名：biz,name,pro,info,coop,museum</p><h2 id="2-域名联系人信息-姓名，邮箱，手机号"><a href="#2-域名联系人信息-姓名，邮箱，手机号" class="headerlink" title="2.域名联系人信息:姓名，邮箱，手机号"></a>2.域名联系人信息:姓名，邮箱，手机号</h2><h3 id="1-域名查询"><a href="#1-域名查询" class="headerlink" title="1.域名查询"></a>1.域名查询</h3><h4 id="1-阿里云"><a href="#1-阿里云" class="headerlink" title="1.阿里云"></a>1.阿里云</h4><h4 id="2-whois-chinaz-com"><a href="#2-whois-chinaz-com" class="headerlink" title="2.whois.chinaz.com"></a>2.whois.chinaz.com</h4><h4 id="3-whoissoft-com"><a href="#3-whoissoft-com" class="headerlink" title="3.whoissoft.com"></a>3.whoissoft.com</h4><h4 id="4-whois-cnnic-cn"><a href="#4-whois-cnnic-cn" class="headerlink" title="4.whois.cnnic.cn"></a>4.whois.cnnic.cn</h4><h4 id="5-kail命令"><a href="#5-kail命令" class="headerlink" title="5.kail命令"></a>5.kail命令</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whois 域名</span><br></pre></td></tr></table></figure><h3 id="2-域名反差："><a href="#2-域名反差：" class="headerlink" title="2.域名反差："></a>2.域名反差：</h3><h4 id="1-whois-chinaz-com"><a href="#1-whois-chinaz-com" class="headerlink" title="1.whois.chinaz.com"></a>1.whois.chinaz.com</h4><h3 id="3-备案信息"><a href="#3-备案信息" class="headerlink" title="3.备案信息"></a>3.备案信息</h3><h4 id="1-beian-miit-gov-cn"><a href="#1-beian-miit-gov-cn" class="headerlink" title="1.beian.miit.gov.cn"></a>1.beian.miit.gov.cn</h4><h4 id="2-beian88-com"><a href="#2-beian88-com" class="headerlink" title="2.beian88.com"></a>2.beian88.com</h4><h4 id="3-天眼查"><a href="#3-天眼查" class="headerlink" title="3.天眼查"></a>3.天眼查</h4><h3 id="3-子域名："><a href="#3-子域名：" class="headerlink" title="3.子域名："></a>3.子域名：</h3><h4 id="1-例如：news-baidu-com"><a href="#1-例如：news-baidu-com" class="headerlink" title="1.例如：news.baidu.com"></a>1.例如：news.baidu.com</h4><p><strong>工具：1.Layer   2. subDomainsBrute</strong></p><p><strong>字典拆解，枚举</strong></p><h3 id="DNS服务："><a href="#DNS服务：" class="headerlink" title="DNS服务："></a>DNS服务：</h3><p>DNS服务器<br>1.主机记录</p><p>记录类型：A:指定ip地址，CNAME：将一个域名指向另一个域名，AAAA，MX，TXT，NS：域名服务器记录</p><p>2.查询：</p><p><a href="http://dbcha.cn/">域名解析查询(A&#x2F;Txt&#x2F;Cname&#x2F;Mx&#x2F;Srv&#x2F;Aaaa…) (dbcha.cn)</a></p><p>netcraft</p><p>jsons.cn</p><p>kail工具：maltego</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;1-域名信息&quot;&gt;&lt;a href=&quot;#1-域名信息&quot; class=&quot;headerlink&quot; title=&quot;1.域名信息&quot;&gt;&lt;/a&gt;1.域名信息&lt;/h1&gt;&lt;h2 id=&quot;1-分类：&quot;&gt;&lt;a href=&quot;#1-分类：&quot; class=&quot;headerlink&quot; title=</summary>
+      
     
     
     
