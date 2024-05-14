@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-05-13T08:47:12.187Z</updated>
+  <updated>2024-05-14T08:53:28.930Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>namp的使用</title>
+    <link href="http://example.com/2024/05/14/namp%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://example.com/2024/05/14/namp%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
+    <published>2024-05-14T08:11:25.000Z</published>
+    <updated>2024-05-14T08:53:28.930Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1-nmap的使用："><a href="#1-nmap的使用：" class="headerlink" title="1.nmap的使用："></a>1.nmap的使用：<a href="https://blog.csdn.net/weixin_49998039/article/details/125242779"></a></h1><h3 id="1-类别："><a href="#1-类别：" class="headerlink" title="1.类别："></a>1.类别：</h3><p>open:端口开启</p><p>filtered:被防火墙阻止扫描</p><p>closed：端口关闭</p><p>unfiltered：无法确定的</p><h3 id="2-nmap的参数"><a href="#2-nmap的参数" class="headerlink" title="2.nmap的参数"></a>2.nmap的参数</h3><p>nmap -sV:版本检测</p><p>-PN:绕过ping命令</p><p>-O：操作系统检测，1-6</p><p>-T：设置扫描速度</p><p>-sP：主机存活性</p><p>-Ss:SYN方式</p><p>-ST:三次握手</p><p>-SP:没有扫描</p><p>-pn:🈲ping</p><p>-Su:udp的数据包</p><p>-sF:FIN的方式</p><h3 id="3-范围内："><a href="#3-范围内：" class="headerlink" title="3.范围内："></a>3.范围内：</h3><p>192.168.1.1-4</p><h3 id="4-注意其他工具的结合：masscan"><a href="#4-注意其他工具的结合：masscan" class="headerlink" title="4.注意其他工具的结合：masscan:"></a>4.注意其他工具的结合：masscan:<a href="https://blog.csdn.net/2302_82189125/article/details/135999466"></a></h3><h3 id="5-常见端口"><a href="#5-常见端口" class="headerlink" title="5.常见端口"></a>5.常见端口</h3><p><img src="C:\Users\王俊阔\AppData\Roaming\Typora\typora-user-images\image-20240514165210564.png" alt="image-20240514165210564"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;1-nmap的使用：&quot;&gt;&lt;a href=&quot;#1-nmap的使用：&quot; class=&quot;headerlink&quot; title=&quot;1.nmap的使用：&quot;&gt;&lt;/a&gt;1.nmap的使用：&lt;a href=&quot;https://blog.csdn.net/weixin_49998039</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>端口信息</title>
