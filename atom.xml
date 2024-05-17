@@ -3,11 +3,11 @@
   <title>web_blog</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://darlingxhani.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
-  <updated>2024-05-16T07:41:04.478Z</updated>
-  <id>http://example.com/</id>
+  <link href="https://darlingxhani.github.io/"/>
+  <updated>2024-05-16T12:05:40.208Z</updated>
+  <id>https://darlingxhani.github.io/</id>
   
   <author>
     <name>Xhani</name>
@@ -18,12 +18,12 @@
   
   <entry>
     <title>WAF_difference</title>
-    <link href="http://example.com/2024/05/16/WAF_difference/"/>
-    <id>http://example.com/2024/05/16/WAF_difference/</id>
+    <link href="https://darlingxhani.github.io/2024/05/16/WAF_difference/"/>
+    <id>https://darlingxhani.github.io/2024/05/16/WAF_difference/</id>
     <published>2024-05-16T07:20:54.000Z</published>
-    <updated>2024-05-16T07:41:04.478Z</updated>
+    <updated>2024-05-16T12:05:40.208Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="WAF-web应用防火墙"><a href="#WAF-web应用防火墙" class="headerlink" title="WAF:web应用防火墙"></a>WAF:web应用防火墙</h1><h3 id="1-作用（简单的）"><a href="#1-作用（简单的）" class="headerlink" title="1.作用（简单的）"></a>1.作用（简单的）</h3><img src="/2024/05/16/WAF_difference/1.png" class title="image1"><h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3>]]></content>
+    <content type="html"><![CDATA[<h1 id="WAF-web应用防火墙"><a href="#WAF-web应用防火墙" class="headerlink" title="WAF:web应用防火墙"></a>WAF:web应用防火墙</h1><h3 id="1-作用（简单的）"><a href="#1-作用（简单的）" class="headerlink" title="1.作用（简单的）"></a>1.作用（简单的）</h3><img src="/2024/05/16/WAF_difference/1.png" class title="image1"><h3 id="2-WAF识别思路："><a href="#2-WAF识别思路：" class="headerlink" title="2.WAF识别思路："></a>2.WAF识别思路：</h3><p>1.<a href="https://github.com/0xInfection/Awesome-WAF">0xInfection&#x2F;Awesome-WAF: 🔥 Web-application firewalls (WAFs) from security standpoint. (github.com)</a></p><p>2.<a href="https://github.com/CSecGroup/wafid">CSecGroup&#x2F;wafid: Wafid identify and fingerprint Web Application Firewall (WAF) products. (github.com)</a></p><h3 id="3-如何触发waf拦截："><a href="#3-如何触发waf拦截：" class="headerlink" title="3.如何触发waf拦截："></a>3.如何触发waf拦截：</h3><h5 id="1-工具：kali-wafw00f"><a href="#1-工具：kali-wafw00f" class="headerlink" title="1.工具：kali:wafw00f"></a>1.工具：kali:wafw00f</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wafw00f https://pinpai.smzdm.com/</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap www.12306.cn --script=http-waf-detect.nse</span><br></pre></td></tr></table></figure><p><strong>必须是动态地址</strong>：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;xxx.com?id=1&quot; --identify-waf</span><br></pre></td></tr></table></figure>]]></content>
     
     
       
@@ -38,8 +38,8 @@
   
   <entry>
     <title>CDN_difference</title>
-    <link href="http://example.com/2024/05/16/CDN-difference/"/>
-    <id>http://example.com/2024/05/16/CDN-difference/</id>
+    <link href="https://darlingxhani.github.io/2024/05/16/CDN-difference/"/>
+    <id>https://darlingxhani.github.io/2024/05/16/CDN-difference/</id>
     <published>2024-05-16T06:54:34.000Z</published>
     <updated>2024-05-16T07:20:07.331Z</updated>
     
@@ -58,8 +58,8 @@
   
   <entry>
     <title>CMS_judgement</title>
-    <link href="http://example.com/2024/05/15/CMS-judgement/"/>
-    <id>http://example.com/2024/05/15/CMS-judgement/</id>
+    <link href="https://darlingxhani.github.io/2024/05/15/CMS-judgement/"/>
+    <id>https://darlingxhani.github.io/2024/05/15/CMS-judgement/</id>
     <published>2024-05-15T06:31:50.000Z</published>
     <updated>2024-05-16T07:01:13.444Z</updated>
     
@@ -78,8 +78,8 @@
   
   <entry>
     <title>namp的使用</title>
-    <link href="http://example.com/2024/05/14/Use_nmap/"/>
-    <id>http://example.com/2024/05/14/Use_nmap/</id>
+    <link href="https://darlingxhani.github.io/2024/05/14/Use_nmap/"/>
+    <id>https://darlingxhani.github.io/2024/05/14/Use_nmap/</id>
     <published>2024-05-14T08:11:25.000Z</published>
     <updated>2024-05-14T09:47:00.966Z</updated>
     
@@ -98,8 +98,8 @@
   
   <entry>
     <title>端口信息</title>
-    <link href="http://example.com/2024/05/10/%E7%AB%AF%E5%8F%A3%E4%BF%A1%E6%81%AF/"/>
-    <id>http://example.com/2024/05/10/%E7%AB%AF%E5%8F%A3%E4%BF%A1%E6%81%AF/</id>
+    <link href="https://darlingxhani.github.io/2024/05/10/%E7%AB%AF%E5%8F%A3%E4%BF%A1%E6%81%AF/"/>
+    <id>https://darlingxhani.github.io/2024/05/10/%E7%AB%AF%E5%8F%A3%E4%BF%A1%E6%81%AF/</id>
     <published>2024-05-10T07:45:41.000Z</published>
     <updated>2024-05-13T08:47:12.187Z</updated>
     
@@ -118,8 +118,8 @@
   
   <entry>
     <title>ip信息收集</title>
-    <link href="http://example.com/2024/05/10/ip%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
-    <id>http://example.com/2024/05/10/ip%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</id>
+    <link href="https://darlingxhani.github.io/2024/05/10/ip%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
+    <id>https://darlingxhani.github.io/2024/05/10/ip%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</id>
     <published>2024-05-10T07:35:28.000Z</published>
     <updated>2024-05-13T07:40:04.708Z</updated>
     
@@ -138,8 +138,8 @@
   
   <entry>
     <title>域名信息收集</title>
-    <link href="http://example.com/2023/11/17/%E5%9F%9F%E5%90%8D%E4%BF%A1%E6%81%AF/"/>
-    <id>http://example.com/2023/11/17/%E5%9F%9F%E5%90%8D%E4%BF%A1%E6%81%AF/</id>
+    <link href="https://darlingxhani.github.io/2023/11/17/%E5%9F%9F%E5%90%8D%E4%BF%A1%E6%81%AF/"/>
+    <id>https://darlingxhani.github.io/2023/11/17/%E5%9F%9F%E5%90%8D%E4%BF%A1%E6%81%AF/</id>
     <published>2023-11-17T08:57:59.000Z</published>
     <updated>2024-05-13T07:12:58.790Z</updated>
     
