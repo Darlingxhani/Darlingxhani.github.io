@@ -6,7 +6,7 @@
   <link href="https://darlingxhani.github.io/atom.xml" rel="self"/>
   
   <link href="https://darlingxhani.github.io/"/>
-  <updated>2024-05-16T12:05:40.208Z</updated>
+  <updated>2024-05-23T08:51:43.781Z</updated>
   <id>https://darlingxhani.github.io/</id>
   
   <author>
@@ -15,6 +15,99 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>scaning_directory</title>
+    <link href="https://darlingxhani.github.io/2024/05/23/scaning-directory/"/>
+    <id>https://darlingxhani.github.io/2024/05/23/scaning-directory/</id>
+    <published>2024-05-23T08:51:43.000Z</published>
+    <updated>2024-05-23T08:51:43.781Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>其他常用的网络空间搜索引擎</title>
+    <link href="https://darlingxhani.github.io/2024/05/23/%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
+    <id>https://darlingxhani.github.io/2024/05/23/%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</id>
+    <published>2024-05-23T08:33:54.000Z</published>
+    <updated>2024-05-23T08:52:05.880Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="censys和zoomeye-国产"><a href="#censys和zoomeye-国产" class="headerlink" title="censys和zoomeye(国产)"></a>censys和zoomeye(国产)</h1><h2 id="1-censys"><a href="#1-censys" class="headerlink" title="1.censys"></a>1.censys</h2><h2 id="2-zoomeye-网络空间资源测绘"><a href="#2-zoomeye-网络空间资源测绘" class="headerlink" title="2.zoomeye(网络空间资源测绘)"></a>2.zoomeye(网络空间资源测绘)</h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;censys和zoomeye-国产&quot;&gt;&lt;a href=&quot;#censys和zoomeye-国产&quot; class=&quot;headerlink&quot; title=&quot;censys和zoomeye(国产)&quot;&gt;&lt;/a&gt;censys和zoomeye(国产)&lt;/h1&gt;&lt;h2 id=&quot;1-c</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>网络空间搜索引擎2</title>
+    <link href="https://darlingxhani.github.io/2024/05/23/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E2/"/>
+    <id>https://darlingxhani.github.io/2024/05/23/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E2/</id>
+    <published>2024-05-23T07:36:17.000Z</published>
+    <updated>2024-05-23T08:29:04.214Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="shodan"><a href="#shodan" class="headerlink" title="shodan"></a>shodan</h1><p>使用文档：<a href="https://xz.aliyun.com/t/2070?time__1311=n4+xnieDqmqqB7DuDBTroGkYDkQG8Y/RB/+eD&alichlgref=https://www.google.com/">https://xz.aliyun.com/t/2070?time__1311=n4%2BxnieDqmqqB7DuDBTroGkYDkQG8Y%2FRB%2F%2BeD&amp;alichlgref=https%3A%2F%2Fwww.google.com%2F</a></p><p>shodan的查询快捷语句：<a href="https://github.com/jakejarvis/awesome-shodan-queries">https://github.com/jakejarvis/awesome-shodan-queries</a></p><p>shodan的py脚本：<a href="https://github.com/random-robbie/My-Shodan-Scripts">https://github.com/random-robbie/My-Shodan-Scripts</a></p><h2 id="1-shodan-io"><a href="#1-shodan-io" class="headerlink" title="1.shodan.io"></a>1.shodan.io</h2><p><strong>shodan搜索使用文档：<a href="https://help.shodan.io/the-basics/search-query-fundamentals">https://help.shodan.io/the-basics/search-query-fundamentals</a></strong></p><p>kali上内置shodan</p><h2 id="2-shodan的功能："><a href="#2-shodan的功能：" class="headerlink" title="2.shodan的功能："></a>2.shodan的功能：</h2><ul><li>地图</li><li>监控</li><li>截图</li><li>过滤器</li></ul><h2 id="3-shodan常见命令："><a href="#3-shodan常见命令：" class="headerlink" title="3.shodan常见命令："></a>3.shodan常见命令：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shodan host 172.67.167.88</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shodan count apache</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shodan stats port:445 SMB</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;shodan&quot;&gt;&lt;a href=&quot;#shodan&quot; class=&quot;headerlink&quot; title=&quot;shodan&quot;&gt;&lt;/a&gt;shodan&lt;/h1&gt;&lt;p&gt;使用文档：&lt;a href=&quot;https://xz.aliyun.com/t/2070?time__1311=</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>网络空间搜索引擎1</title>
+    <link href="https://darlingxhani.github.io/2024/05/23/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E1/"/>
+    <id>https://darlingxhani.github.io/2024/05/23/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E1/</id>
+    <published>2024-05-23T07:07:23.000Z</published>
+    <updated>2024-05-23T07:29:33.618Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-什么是网络空间：Cyber-space"><a href="#1-什么是网络空间：Cyber-space" class="headerlink" title="1.什么是网络空间：Cyber space"></a>1.什么是网络空间：Cyber space</h2><p>搜索引擎：goole诞生————网页</p><p>发展：图片 音乐 声音</p><p>进一步：</p><table><thead><tr><th>网络系统</th><th>网络设备</th><th>工业系统</th></tr></thead><tbody><tr><td>CDN</td><td>手机</td><td>交通信号灯  公园控制系统</td></tr><tr><td>IDS</td><td>平板</td><td>核电站</td></tr><tr><td>CMS</td><td>交换机 路由器 网络摄像头</td><td>加油站</td></tr><tr><td>办公软件</td><td>私人网盘</td><td>电网</td></tr><tr><td>数据库</td><td>打印机  ATM 机器人</td><td>企业大屏幕</td></tr></tbody></table><h2 id="2-网络空间搜索引擎："><a href="#2-网络空间搜索引擎：" class="headerlink" title="2.网络空间搜索引擎："></a>2.网络空间搜索引擎：</h2><h5 id="怎么扫描：1-用网络工具：zmap-nmap-2-方式：IP库-枚举"><a href="#怎么扫描：1-用网络工具：zmap-nmap-2-方式：IP库-枚举" class="headerlink" title="怎么扫描：1.用网络工具：zmap nmap  2.方式：IP库 枚举"></a>怎么扫描：1.用网络工具：zmap nmap  2.方式：IP库 枚举</h5><p>怎么标识设备：</p><ul><li><p>ip:域名</p></li><li><p>MAC</p></li><li><p>爬虫：url</p></li><li><p>开放系统</p></li><li><p>物理地址</p></li><li><p>操作系统</p></li><li><p>设备类型</p></li></ul><h2 id="3-实行威胁地图：fireeye"><a href="#3-实行威胁地图：fireeye" class="headerlink" title="3.实行威胁地图：fireeye"></a>3.实行威胁地图：fireeye</h2><h2 id="4-安全性"><a href="#4-安全性" class="headerlink" title="4.安全性"></a>4.安全性</h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;1-什么是网络空间：Cyber-space&quot;&gt;&lt;a href=&quot;#1-什么是网络空间：Cyber-space&quot; class=&quot;headerlink&quot; title=&quot;1.什么是网络空间：Cyber space&quot;&gt;&lt;/a&gt;1.什么是网络空间：Cyber space&lt;/</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Google_hacking</title>
+    <link href="https://darlingxhani.github.io/2024/05/23/Google-hacking/"/>
+    <id>https://darlingxhani.github.io/2024/05/23/Google-hacking/</id>
+    <published>2024-05-23T06:12:50.000Z</published>
+    <updated>2024-05-23T07:06:23.465Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-语法工具：pdf文档：https-web-archive-org-web-20140822191407-http-www-boris-koch-de-wp-content-uploads-2011-01-Liste-Google-Hacking-pdf"><a href="#1-语法工具：pdf文档：https-web-archive-org-web-20140822191407-http-www-boris-koch-de-wp-content-uploads-2011-01-Liste-Google-Hacking-pdf" class="headerlink" title="1.语法工具：pdf文档：https://web.archive.org/web/20140822191407/http://www.boris-koch.de/wp-content/uploads/2011/01/Liste-Google-Hacking.pdf"></a>1.语法工具：pdf文档：<a href="https://web.archive.org/web/20140822191407/http://www.boris-koch.de/wp-content/uploads/2011/01/Liste-Google-Hacking.pdf">https://web.archive.org/web/20140822191407/http://www.boris-koch.de/wp-content/uploads/2011/01/Liste-Google-Hacking.pdf</a></h2><h2 id="2-一些运算符："><a href="#2-一些运算符：" class="headerlink" title="2.一些运算符："></a>2.一些运算符：</h2><p><strong>完全匹配:</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;网络安全&quot;</span><br></pre></td></tr></table></figure><p><strong>任意词语：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 or 2</span><br></pre></td></tr></table></figure><p><strong>不包含：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">burp_suite - xxx</span><br></pre></td></tr></table></figure><p><strong>数字范围：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">number..number</span><br></pre></td></tr></table></figure><h2 id="3-高级语法"><a href="#3-高级语法" class="headerlink" title="3.高级语法"></a>3.高级语法</h2><p><strong>1.只搜索某个网站的内容：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">site:zhihu.com</span><br></pre></td></tr></table></figure><p><strong>2.网页内容包括：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">allintext:Powered by Discuz</span><br><span class="line">intext：Powered by Discuz</span><br></pre></td></tr></table></figure><h6 id="标题：是html网页标签的标题"><a href="#标题：是html网页标签的标题" class="headerlink" title="标题：是html网页标签的标题"></a>标题：是html网页标签的标题</h6><p> <strong>3.标题出现：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">intitle：</span><br><span class="line">allintitle:</span><br></pre></td></tr></table></figure><p><strong>4.url地址包括：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">allinurl:admin.php</span><br><span class="line">inurl:index.php?id=1</span><br></pre></td></tr></table></figure><p><strong>5.文件类型：</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">filetype：pdf</span><br></pre></td></tr></table></figure><p><strong>6.index of</strong></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">intitle:index of</span><br></pre></td></tr></table></figure><h2 id="4-google语法数据库："><a href="#4-google语法数据库：" class="headerlink" title="4.google语法数据库："></a>4.google语法数据库：</h2><p><a href="https://www.exploit-db.com/google-hacking-database">https://www.exploit-db.com/google-hacking-database</a></p><p><a href="https://github.com/BullsEye0/google_dork_list">https://github.com/BullsEye0/google_dork_list</a></p><h2 id="5-工具："><a href="#5-工具：" class="headerlink" title="5.工具："></a>5.工具：</h2><p>github搜索：Google hcaking </p><p>​Google dorks </p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;1-语法工具：pdf文档：https-web-archive-org-web-20140822191407-http-www-boris-koch-de-wp-content-uploads-2011-01-Liste-Google-Hacking-pdf&quot;&gt;&lt;a</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>WAF_difference</title>
