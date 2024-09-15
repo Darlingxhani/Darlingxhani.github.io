@@ -69,6 +69,108 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-deassembly-md" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/09/14/deassembly-md/" class="article-date">
+  <time class="dt-published" datetime="2024-09-14T11:38:38.000Z" itemprop="datePublished">2024-09-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/09/14/deassembly-md/">常见汇编</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="if-else"><a href="#if-else" class="headerlink" title="if_else:"></a>if_else:</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">		操作1</span><br><span class="line">		cmp a,b</span><br><span class="line">		je 0x0001</span><br><span class="line">		操作2 Yes</span><br><span class="line">		jmp 0x0002</span><br><span class="line">0x0001:	操作3 NO</span><br><span class="line">0x0002:</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2024/09/14/deassembly-md/Users\王俊阔\文件档案\BlogCount\source_posts\deassembly-md\image-20240914194223239.png" alt="image-20240914194223239"></p>
+<h1 id="switch-case"><a href="#switch-case" class="headerlink" title="switch case:"></a>switch case:</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">		操作1</span><br><span class="line">		cmp  a,400</span><br><span class="line">		jg 0x000000</span><br><span class="line">		cmp a,400</span><br><span class="line">		je 0x000001</span><br><span class="line">		cmp a,300</span><br><span class="line">		je 0x00002</span><br><span class="line">		cmp a,200</span><br><span class="line">		je 0x0003</span><br><span class="line">		jmp 0x0004           </span><br><span class="line">		操作2  </span><br><span class="line">		jmp 0x0004         //实际上是有break;</span><br><span class="line">		操作3</span><br><span class="line">		jmp 0x0004 </span><br><span class="line">		操作4</span><br><span class="line">		jmp 0x0004</span><br><span class="line">		操作5</span><br><span class="line">0x0004:</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2024/09/14/deassembly-md/Users\王俊阔\文件档案\BlogCount\source_posts\deassembly-md\image-20240914194329734.png" alt="image-20240914194329734"></p>
+<h1 id="while"><a href="#while" class="headerlink" title="while()"></a>while()</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">0x0000: cmp a,100</span><br><span class="line">      	jle 0x00001</span><br><span class="line">		操作</span><br><span class="line">		jmp 0x0000</span><br><span class="line">0x00001:</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2024/09/14/deassembly-md/Users\王俊阔\文件档案\BlogCount\source_posts\deassembly-md\image-20240914195237570.png" alt="image-20240914195237570"></p>
+<h1 id="do-while"><a href="#do-while" class="headerlink" title="do  while()"></a>do  while()</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0x00001:操作</span><br><span class="line">		cmp a,100</span><br><span class="line">		jle  0x00001</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2024/09/14/deassembly-md/Users\王俊阔\文件档案\BlogCount\source_posts\deassembly-md\image-20240914195647559.png" alt="image-20240914195647559"></p>
+<h1 id="for"><a href="#for" class="headerlink" title="for()"></a>for()</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">		mov dowrd ptr[ebp-8],1</span><br><span class="line">		jmp 0x00001</span><br><span class="line">0x00003:操作</span><br><span class="line">       	add/sub/mul/div ecx,dowrd ptr[ebp-8]</span><br><span class="line">0x00001:cmp ecx,dowrd ptr[ebp-8]</span><br><span class="line">		jg 0x00002</span><br><span class="line">		操作</span><br><span class="line">		jmp 0x00003</span><br><span class="line">0x00002:</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2024/09/14/deassembly-md/Users\王俊阔\文件档案\BlogCount\source_posts\deassembly-md\image-20240914195836157.png" alt="image-20240914195836157"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://darlingxhani.github.io/2024/09/14/deassembly-md/" data-id="cm12460za0001vsksc9xla2k3" data-title="常见汇编" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/06/04/1/" class="article-date">
+  <time class="dt-published" datetime="2024-06-04T02:49:23.000Z" itemprop="datePublished">2024-06-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2024/06/04/1/">1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>出行需求：<br>$$<br>Dij&#x3D;(pi+pj)(1&#x2F;d^2ij)<br>$$</p>
+<ul>
+<li><em>ρi</em> 和 𝜌𝑗 分别为区域 𝑖区域 𝑗 的人口密度。</li>
+<li>D𝑖𝑗为区域 𝑖和区域 𝑗 之间的曼哈顿距离。</li>
+</ul>
+<p>$$<br>Dij&#x3D;|ix-jx|+|iy-jy|<br>$$</p>
+<p>最优函数：<br>$$<br>Maximize  ∑ i ∑ j Dij*(v1<em>xij&#x2F;t1+v2</em>yij&#x2F;t2)<br>$$</p>
+<ul>
+<li>地铁：速度快，容量大，建设成本高，速度为 𝑣1&#x3D;60 km&#x2F;h，运行时间t1&#x3D;1建设成本为 1 亿元&#x2F;公里。</li>
+<li>公交：速度较慢，容量较小，建设成本低，速度为 𝑣2&#x3D;30 km&#x2F;h，运行时间t2&#x3D;3h建设成本为 0.1 亿元&#x2F;公里。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://darlingxhani.github.io/2024/06/04/1/" data-id="cm12460z70000vsks7zb65iuj" data-title="1" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-scaning-directory" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/05/23/scaning-directory/" class="article-date">
@@ -91,7 +193,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        
+        <h2 id="1-什么是目录扫描"><a href="#1-什么是目录扫描" class="headerlink" title="1.什么是目录扫描"></a>1.什么是目录扫描</h2>
       
     </div>
     <footer class="article-footer">
@@ -625,100 +727,12 @@
 
 
   
-    <article id="post-ip信息收集" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/05/10/ip%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" class="article-date">
-  <time class="dt-published" datetime="2024-05-10T07:35:28.000Z" itemprop="datePublished">2024-05-10</time>
-</a>
+
+
+  <nav id="page-nav">
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/05/10/ip%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">ip信息收集</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="ip信息收集："><a href="#ip信息收集：" class="headerlink" title="ip信息收集："></a>ip信息收集：</h1><h2 id="1-DNS类型"><a href="#1-DNS类型" class="headerlink" title="1.DNS类型"></a>1.DNS类型</h2><h5 id="1-本地域名服务器，根域名服务器，顶级域名，授权域名"><a href="#1-本地域名服务器，根域名服务器，顶级域名，授权域名" class="headerlink" title="1.本地域名服务器，根域名服务器，顶级域名，授权域名"></a>1.本地域名服务器，根域名服务器，顶级域名，授权域名</h5><h5 id="2-迭代查询，递归查询"><a href="#2-迭代查询，递归查询" class="headerlink" title="2.迭代查询，递归查询"></a>2.迭代查询，递归查询</h5><h2 id="2-ping-nslookup"><a href="#2-ping-nslookup" class="headerlink" title="2.ping&#x2F;nslookup"></a>2.ping&#x2F;nslookup</h2><h5 id="ping-应用层"><a href="#ping-应用层" class="headerlink" title="ping:应用层"></a>ping:应用层</h5><p>命令：<code>nslookup -type=&quot;MS&quot; baidu.com</code></p>
-<h2 id="3-IP归属："><a href="#3-IP归属：" class="headerlink" title="3.IP归属："></a>3.IP归属：</h2><p>1.ipwhois.cnnic.cn</p>
-<p>2.ip138.com</p>
-<h2 id="4-CDN服务："><a href="#4-CDN服务：" class="headerlink" title="4.CDN服务："></a>4.CDN服务：</h2><h4 id="要找到CDN背后的真实ip"><a href="#要找到CDN背后的真实ip" class="headerlink" title="要找到CDN背后的真实ip"></a>要找到CDN背后的真实ip</h4><h6 id="1-超级ping"><a href="#1-超级ping" class="headerlink" title="1.超级ping"></a>1.超级ping</h6><h6 id="2-历史DNS-dnshistory"><a href="#2-历史DNS-dnshistory" class="headerlink" title="2.历史DNS:dnshistory"></a>2.历史DNS:dnshistory</h6><h6 id="3-通过子域名"><a href="#3-通过子域名" class="headerlink" title="3.通过子域名"></a>3.通过子域名</h6><h6 id="4-国外主机解析-dnscheck-webpagetest-org"><a href="#4-国外主机解析-dnscheck-webpagetest-org" class="headerlink" title="4.国外主机解析:dnscheck,webpagetest.org"></a>4.国外主机解析:dnscheck,webpagetest.org</h6><h6 id="5-邮件，SSL证书，手机抓包"><a href="#5-邮件，SSL证书，手机抓包" class="headerlink" title="5.邮件，SSL证书，手机抓包"></a>5.邮件，SSL证书，手机抓包</h6>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://darlingxhani.github.io/2024/05/10/ip%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/" data-id="clwixod3x000ctgwz8l834e6a" data-title="ip信息收集" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-域名信息" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/11/17/%E5%9F%9F%E5%90%8D%E4%BF%A1%E6%81%AF/" class="article-date">
-  <time class="dt-published" datetime="2023-11-17T08:57:59.000Z" itemprop="datePublished">2023-11-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/11/17/%E5%9F%9F%E5%90%8D%E4%BF%A1%E6%81%AF/">域名信息收集</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="1-域名信息"><a href="#1-域名信息" class="headerlink" title="1.域名信息"></a>1.域名信息</h1><h2 id="1-分类："><a href="#1-分类：" class="headerlink" title="1.分类："></a>1.分类：</h2><p>国际域名：com,net,org,gov,edu,mil,int</p>
-<p>国别：cn,uk,us,</p>
-<p>新顶级域名：biz,name,pro,info,coop,museum</p>
-<h2 id="2-域名联系人信息-姓名，邮箱，手机号"><a href="#2-域名联系人信息-姓名，邮箱，手机号" class="headerlink" title="2.域名联系人信息:姓名，邮箱，手机号"></a>2.域名联系人信息:姓名，邮箱，手机号</h2><h3 id="1-域名查询"><a href="#1-域名查询" class="headerlink" title="1.域名查询"></a>1.域名查询</h3><h4 id="1-阿里云"><a href="#1-阿里云" class="headerlink" title="1.阿里云"></a>1.阿里云</h4><h4 id="2-whois-chinaz-com"><a href="#2-whois-chinaz-com" class="headerlink" title="2.whois.chinaz.com"></a>2.whois.chinaz.com</h4><h4 id="3-whoissoft-com"><a href="#3-whoissoft-com" class="headerlink" title="3.whoissoft.com"></a>3.whoissoft.com</h4><h4 id="4-whois-cnnic-cn"><a href="#4-whois-cnnic-cn" class="headerlink" title="4.whois.cnnic.cn"></a>4.whois.cnnic.cn</h4><h4 id="5-kail命令"><a href="#5-kail命令" class="headerlink" title="5.kail命令"></a>5.kail命令</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whois 域名</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-域名反差："><a href="#2-域名反差：" class="headerlink" title="2.域名反差："></a>2.域名反差：</h3><h4 id="1-whois-chinaz-com"><a href="#1-whois-chinaz-com" class="headerlink" title="1.whois.chinaz.com"></a>1.whois.chinaz.com</h4><h3 id="3-备案信息"><a href="#3-备案信息" class="headerlink" title="3.备案信息"></a>3.备案信息</h3><h4 id="1-beian-miit-gov-cn"><a href="#1-beian-miit-gov-cn" class="headerlink" title="1.beian.miit.gov.cn"></a>1.beian.miit.gov.cn</h4><h4 id="2-beian88-com"><a href="#2-beian88-com" class="headerlink" title="2.beian88.com"></a>2.beian88.com</h4><h4 id="3-天眼查"><a href="#3-天眼查" class="headerlink" title="3.天眼查"></a>3.天眼查</h4><h3 id="3-子域名："><a href="#3-子域名：" class="headerlink" title="3.子域名："></a>3.子域名：</h3><h4 id="1-例如：news-baidu-com"><a href="#1-例如：news-baidu-com" class="headerlink" title="1.例如：news.baidu.com"></a>1.例如：news.baidu.com</h4><p><strong>工具：1.Layer   2. subDomainsBrute</strong></p>
-<p><strong>字典拆解，枚举</strong></p>
-<h3 id="DNS服务："><a href="#DNS服务：" class="headerlink" title="DNS服务："></a>DNS服务：</h3><p>DNS服务器<br>1.主机记录</p>
-<p>记录类型：A:指定ip地址，CNAME：将一个域名指向另一个域名，AAAA，MX，TXT，NS：域名服务器记录</p>
-<p>2.查询：</p>
-<p><a target="_blank" rel="noopener" href="http://dbcha.cn/">域名解析查询(A&#x2F;Txt&#x2F;Cname&#x2F;Mx&#x2F;Srv&#x2F;Aaaa…) (dbcha.cn)</a></p>
-<p>netcraft</p>
-<p>jsons.cn</p>
-<p>kail工具：maltego</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://darlingxhani.github.io/2023/11/17/%E5%9F%9F%E5%90%8D%E4%BF%A1%E6%81%AF/" data-id="clwixod3v0009tgwz2dkg6xiv" data-title="域名信息收集" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+  </nav>
 
 </section>
         
@@ -736,7 +750,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">五月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">九月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">六月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">五月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li></ul>
     </div>
   </div>
 
@@ -749,6 +763,14 @@
       <ul>
         
           <li>
+            <a href="/2024/09/14/deassembly-md/">常见汇编</a>
+          </li>
+        
+          <li>
+            <a href="/2024/06/04/1/">1</a>
+          </li>
+        
+          <li>
             <a href="/2024/05/23/scaning-directory/">scaning_directory</a>
           </li>
         
@@ -758,14 +780,6 @@
         
           <li>
             <a href="/2024/05/23/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E2/">网络空间搜索引擎2</a>
-          </li>
-        
-          <li>
-            <a href="/2024/05/23/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E1/">网络空间搜索引擎1</a>
-          </li>
-        
-          <li>
-            <a href="/2024/05/23/Google-hacking/">Google_hacking</a>
           </li>
         
       </ul>

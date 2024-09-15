@@ -6,7 +6,7 @@
   <link href="https://darlingxhani.github.io/atom.xml" rel="self"/>
   
   <link href="https://darlingxhani.github.io/"/>
-  <updated>2024-05-23T08:51:43.781Z</updated>
+  <updated>2024-09-14T12:16:58.537Z</updated>
   <id>https://darlingxhani.github.io/</id>
   
   <author>
@@ -17,12 +17,62 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>常见汇编</title>
+    <link href="https://darlingxhani.github.io/2024/09/14/deassembly-md/"/>
+    <id>https://darlingxhani.github.io/2024/09/14/deassembly-md/</id>
+    <published>2024-09-14T11:38:38.000Z</published>
+    <updated>2024-09-14T12:16:58.537Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="if-else"><a href="#if-else" class="headerlink" title="if_else:"></a>if_else:</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">操作1</span><br><span class="line">cmp a,b</span><br><span class="line">je 0x0001</span><br><span class="line">操作2 Yes</span><br><span class="line">jmp 0x0002</span><br><span class="line">0x0001:操作3 NO</span><br><span class="line">0x0002:</span><br></pre></td></tr></table></figure><p><img src="/2024/09/14/deassembly-md/Users\王俊阔\文件档案\BlogCount\source_posts\deassembly-md\image-20240914194223239.png" alt="image-20240914194223239"></p><h1 id="switch-case"><a href="#switch-case" class="headerlink" title="switch case:"></a>switch case:</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">操作1</span><br><span class="line">cmp  a,400</span><br><span class="line">jg 0x000000</span><br><span class="line">cmp a,400</span><br><span class="line">je 0x000001</span><br><span class="line">cmp a,300</span><br><span class="line">je 0x00002</span><br><span class="line">cmp a,200</span><br><span class="line">je 0x0003</span><br><span class="line">jmp 0x0004           </span><br><span class="line">操作2  </span><br><span class="line">jmp 0x0004         //实际上是有break;</span><br><span class="line">操作3</span><br><span class="line">jmp 0x0004 </span><br><span class="line">操作4</span><br><span class="line">jmp 0x0004</span><br><span class="line">操作5</span><br><span class="line">0x0004:</span><br></pre></td></tr></table></figure><p><img src="/2024/09/14/deassembly-md/Users\王俊阔\文件档案\BlogCount\source_posts\deassembly-md\image-20240914194329734.png" alt="image-20240914194329734"></p><h1 id="while"><a href="#while" class="headerlink" title="while()"></a>while()</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">0x0000: cmp a,100</span><br><span class="line">      jle 0x00001</span><br><span class="line">操作</span><br><span class="line">jmp 0x0000</span><br><span class="line">0x00001:</span><br></pre></td></tr></table></figure><p><img src="/2024/09/14/deassembly-md/Users\王俊阔\文件档案\BlogCount\source_posts\deassembly-md\image-20240914195237570.png" alt="image-20240914195237570"></p><h1 id="do-while"><a href="#do-while" class="headerlink" title="do  while()"></a>do  while()</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0x00001:操作</span><br><span class="line">cmp a,100</span><br><span class="line">jle  0x00001</span><br></pre></td></tr></table></figure><p><img src="/2024/09/14/deassembly-md/Users\王俊阔\文件档案\BlogCount\source_posts\deassembly-md\image-20240914195647559.png" alt="image-20240914195647559"></p><h1 id="for"><a href="#for" class="headerlink" title="for()"></a>for()</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mov dowrd ptr[ebp-8],1</span><br><span class="line">jmp 0x00001</span><br><span class="line">0x00003:操作</span><br><span class="line">       add/sub/mul/div ecx,dowrd ptr[ebp-8]</span><br><span class="line">0x00001:cmp ecx,dowrd ptr[ebp-8]</span><br><span class="line">jg 0x00002</span><br><span class="line">操作</span><br><span class="line">jmp 0x00003</span><br><span class="line">0x00002:</span><br></pre></td></tr></table></figure><p><img src="/2024/09/14/deassembly-md/Users\王俊阔\文件档案\BlogCount\source_posts\deassembly-md\image-20240914195836157.png" alt="image-20240914195836157"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;if-else&quot;&gt;&lt;a href=&quot;#if-else&quot; class=&quot;headerlink&quot; title=&quot;if_else:&quot;&gt;&lt;/a&gt;if_else:&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td </summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>1</title>
+    <link href="https://darlingxhani.github.io/2024/06/04/1/"/>
+    <id>https://darlingxhani.github.io/2024/06/04/1/</id>
+    <published>2024-06-04T02:49:23.000Z</published>
+    <updated>2024-06-04T03:41:23.369Z</updated>
+    
+    <content type="html"><![CDATA[<p>出行需求：<br>$$<br>Dij&#x3D;(pi+pj)(1&#x2F;d^2ij)<br>$$</p><ul><li><em>ρi</em> 和 𝜌𝑗 分别为区域 𝑖区域 𝑗 的人口密度。</li><li>D𝑖𝑗为区域 𝑖和区域 𝑗 之间的曼哈顿距离。</li></ul><p>$$<br>Dij&#x3D;|ix-jx|+|iy-jy|<br>$$</p><p>最优函数：<br>$$<br>Maximize  ∑ i ∑ j Dij*(v1<em>xij&#x2F;t1+v2</em>yij&#x2F;t2)<br>$$</p><ul><li>地铁：速度快，容量大，建设成本高，速度为 𝑣1&#x3D;60 km&#x2F;h，运行时间t1&#x3D;1建设成本为 1 亿元&#x2F;公里。</li><li>公交：速度较慢，容量较小，建设成本低，速度为 𝑣2&#x3D;30 km&#x2F;h，运行时间t2&#x3D;3h建设成本为 0.1 亿元&#x2F;公里。</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;出行需求：&lt;br&gt;$$&lt;br&gt;Dij&amp;#x3D;(pi+pj)(1&amp;#x2F;d^2ij)&lt;br&gt;$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;ρi&lt;/em&gt; 和 𝜌𝑗 分别为区域 𝑖区域 𝑗 的人口密度。&lt;/li&gt;
+&lt;li&gt;D𝑖𝑗为区域 𝑖和区域 𝑗 之间的曼哈</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>scaning_directory</title>
     <link href="https://darlingxhani.github.io/2024/05/23/scaning-directory/"/>
     <id>https://darlingxhani.github.io/2024/05/23/scaning-directory/</id>
     <published>2024-05-23T08:51:43.000Z</published>
-    <updated>2024-05-23T08:51:43.781Z</updated>
+    <updated>2024-05-23T10:44:05.098Z</updated>
     
+    <content type="html"><![CDATA[<h2 id="1-什么是目录扫描"><a href="#1-什么是目录扫描" class="headerlink" title="1.什么是目录扫描"></a>1.什么是目录扫描</h2>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;1-什么是目录扫描&quot;&gt;&lt;a href=&quot;#1-什么是目录扫描&quot; class=&quot;headerlink&quot; title=&quot;1.什么是目录扫描&quot;&gt;&lt;/a&gt;1.什么是目录扫描&lt;/h2&gt;</summary>
+      
     
     
     
