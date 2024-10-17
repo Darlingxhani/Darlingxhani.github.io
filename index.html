@@ -1,833 +1,182 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>web_blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>web_blog</title><meta name="author" content="Xhani"><meta name="copyright" content="Xhani"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
 <meta property="og:title" content="web_blog">
 <meta property="og:url" content="https://darlingxhani.github.io/index.html">
 <meta property="og:site_name" content="web_blog">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://darlingxhani.github.io/img/avatar.jpg">
 <meta property="article:author" content="Xhani">
 <meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="web_blog" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+<meta name="twitter:image" content="https://darlingxhani.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://darlingxhani.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
 
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        if (name && globalFn[key][name]) return
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
   
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
     
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
   
-  
-<meta name="generator" content="Hexo 7.2.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">web_blog</a>
-      </h1>
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":true,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'web_blog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-10-17 11:58:22'
+}</script><meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="web_blog" type="application/atom+xml">
+</head><body><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(/img/background.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">web_blog</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div></div></nav><div id="site-info"><h1 id="site-title">web_blog</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/09/14/deassembly-md/" title="常见汇编">常见汇编</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-14T11:38:38.000Z" title="发表于 2024-09-14 19:38:38">2024-09-14</time></span></div><div class="content">if_else:123456		cmp a,b		je 0x0001		操作2 Yes		jmp 0x00020x0001:	操作3 NO0x0002:   switch case:123456789101112131415161718		操作1		cmp  a,400		jg 0x000000		cmp a,400		je 0x000001		cmp a,300		je 0x00002		cmp a,200		je 0x0003		jmp 0x0004           		操作2  		jmp 0x0004         //实际上是有break;		操作3		jmp 0x0004 		操作4		jmp 0x0004		操作50x0004:   while()123450x0000: cmp a,100      	jle 0x00001		操作		jmp 0x00000x00001:   do  while()1230x00001:操作		cmp a,100		jle  0x00001   for()123456789		mov dowrd...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/06/04/1/" title="1">1</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-06-04T02:49:23.000Z" title="发表于 2024-06-04 10:49:23">2024-06-04</time></span></div><div class="content">出行需求：$$Dij&#x3D;(pi+pj)(1&#x2F;d^2ij)$$  ρi 和 𝜌𝑗 分别为区域 𝑖区域 𝑗 的人口密度。 D𝑖𝑗为区域 𝑖和区域 𝑗 之间的曼哈顿距离。  $$Dij&#x3D;|ix-jx|+|iy-jy|$$ 最优函数：$$Maximize  ∑ i ∑ j Dij*(v1xij&#x2F;t1+v2yij&#x2F;t2)$$  地铁：速度快，容量大，建设成本高，速度为 𝑣1&#x3D;60 km&#x2F;h，运行时间t1&#x3D;1建设成本为 1 亿元&#x2F;公里。 公交：速度较慢，容量较小，建设成本低，速度为 𝑣2&#x3D;30 km&#x2F;h，运行时间t2&#x3D;3h建设成本为 0.1 亿元&#x2F;公里。  </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/05/23/scaning-directory/" title="scaning_directory">scaning_directory</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-05-23T08:51:43.000Z" title="发表于 2024-05-23 16:51:43">2024-05-23</time></span></div><div class="content">1.什么是目录扫描</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/05/23/%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/" title="其他常用的网络空间搜索引擎">其他常用的网络空间搜索引擎</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-05-23T08:33:54.000Z" title="发表于 2024-05-23 16:33:54">2024-05-23</time></span></div><div class="content">censys和zoomeye(国产)1.censys2.zoomeye(网络空间资源测绘)</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/05/23/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E2/" title="网络空间搜索引擎2">网络空间搜索引擎2</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-05-23T07:36:17.000Z" title="发表于 2024-05-23 15:36:17">2024-05-23</time></span></div><div class="content">shodan使用文档：https://xz.aliyun.com/t/2070?time__1311=n4%2BxnieDqmqqB7DuDBTroGkYDkQG8Y%2FRB%2F%2BeD&amp;alichlgref=https%3A%2F%2Fwww.google.com%2F shodan的查询快捷语句：https://github.com/jakejarvis/awesome-shodan-queries shodan的py脚本：https://github.com/random-robbie/My-Shodan-Scripts 1.shodan.ioshodan搜索使用文档：https://help.shodan.io/the-basics/search-query-fundamentals kali上内置shodan 2.shodan的功能： 地图 监控 截图 过滤器  3.shodan常见命令：1shodan host 172.67.167.88  1shodan count apache  1shodan stats port:445 SMB  </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/05/23/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E1/" title="网络空间搜索引擎1">网络空间搜索引擎1</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-05-23T07:07:23.000Z" title="发表于 2024-05-23 15:07:23">2024-05-23</time></span></div><div class="content">1.什么是网络空间：Cyber space搜索引擎：goole诞生————网页 发展：图片 音乐 声音 进一步：    网络系统 网络设备 工业系统    CDN 手机 交通信号灯  公园控制系统   IDS 平板 核电站   CMS 交换机 路由器 网络摄像头 加油站   办公软件 私人网盘 电网   数据库 打印机  ATM 机器人 企业大屏幕   2.网络空间搜索引擎：怎么扫描：1.用网络工具：zmap nmap  2.方式：IP库 枚举怎么标识设备：  ip:域名  MAC	  爬虫：url  开放系统  物理地址  操作系统  设备类型   3.实行威胁地图：fireeye4.安全性</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/05/23/Google-hacking/" title="Google_hacking">Google_hacking</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-05-23T06:12:50.000Z" title="发表于 2024-05-23 14:12:50">2024-05-23</time></span></div><div class="content">1.语法工具：pdf文档：https://web.archive.org/web/20140822191407/http://www.boris-koch.de/wp-content/uploads/2011/01/Liste-Google-Hacking.pdf2.一些运算符：完全匹配: 1&quot;网络安全&quot;  任意词语： 11 or 2  不包含： 1burp_suite - xxx  数字范围： 1number..number  3.高级语法1.只搜索某个网站的内容： 1site:zhihu.com  2.网页内容包括： 12allintext:Powered by Discuzintext：Powered by Discuz  标题：是html网页标签的标题 3.标题出现： 12intitle：allintitle:  4.url地址包括： 12allinurl:admin.phpinurl:index.php?id=1  5.文件类型： 1filetype：pdf  6.index of 1intitle:index...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/05/16/WAF_difference/" title="WAF_difference">WAF_difference</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-05-16T07:20:54.000Z" title="发表于 2024-05-16 15:20:54">2024-05-16</time></span></div><div class="content">WAF:web应用防火墙1.作用（简单的）  2.WAF识别思路：1.0xInfection&#x2F;Awesome-WAF: 🔥 Web-application firewalls (WAFs) from security standpoint. (github.com) 2.CSecGroup&#x2F;wafid: Wafid identify and fingerprint Web Application Firewall (WAF) products. (github.com) 3.如何触发waf拦截：1.工具：kali:wafw00f1wafw00f https://pinpai.smzdm.com/  1nmap www.12306.cn --script=http-waf-detect.nse  必须是动态地址： 1sqlmap -u &quot;xxx.com?id=1&quot; --identify-waf  </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/05/16/CDN-difference/" title="CDN_difference">CDN_difference</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-05-16T06:54:34.000Z" title="发表于 2024-05-16 14:54:34">2024-05-16</time></span></div><div class="content">1.CDN是什么：CDN图解（秒懂 + 史上最全） - 疯狂创客圈 - 博客园 (cnblogs.com)2.如何获取CDN背后的真实ip1.ping    1nslookup 域名  3.超级ping 4.Kali工具:lbd 5.国内：cdn.chinaz.com 国外cdnplanet.com&#x2F;tools&#x2F;cdnfinder 6.脚本： https://github.com/boy-hack/w8fuckcdn/ https://gitghub.com/3xp10it/xcdn </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/05/15/CMS-judgement/" title="CMS_judgement">CMS_judgement</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-05-15T06:31:50.000Z" title="发表于 2024-05-15 14:31:50">2024-05-15</time></span></div><div class="content">CMS的指纹识别1.识别对象：1.CMS信息：内容管理系统2.前端技术： 3.开发语言 4.web服务器 5.应用服务器 6.操作系统 7.CDN的信息8.WAF信息2.CMS：各类开源的CMS：企业，博客，论坛，问答，知识百科，门户建站，在线教育建站，人才招聘网站 3.CMS识别思路：1.版权信息2.特定文件MD5值:(https://github.com/Lucifer1993/cmsprint/blob/master/cmsprint.json)3.查看页面原代码:分析代码4.查看特定文件分析：如网站的robots .txt文件4.CMS工具：1.kali工具：whatweb1`whatweb  -v www.coolshell.cn`    2.浏览器插件：Wappalyzer,whatruns3.https://github.com/Tuhinshubhra/CMSeek4.http://finger.tidesec.com/</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/05/14/Use_nmap/" title="namp的使用">namp的使用</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-05-14T08:11:25.000Z" title="发表于 2024-05-14 16:11:25">2024-05-14</time></span></div><div class="content">1.nmap的使用：1.类别：open:端口开启 filtered:被防火墙阻止扫描 closed：端口关闭 unfiltered：无法确定的 2.nmap的参数nmap -sV:版本检测 -PN:绕过ping命令 -O：操作系统检测，1-6 -T：设置扫描速度 -sP：主机存活性 -Ss:SYN方式 -ST:三次握手 -SP:没有扫描 -pn:🈲ping -Su:udp的数据包 -sF:FIN的方式 3.范围内：192.168.1.1-4 4.注意其他工具的结合：masscan:fofa.info，fofa-view插件 5.常见端口This is a img  </div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/05/10/%E7%AB%AF%E5%8F%A3%E4%BF%A1%E6%81%AF/" title="端口信息">端口信息</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-05-10T07:45:41.000Z" title="发表于 2024-05-10 15:45:41">2024-05-10</time></span></div><div class="content">1.端口扫描和代码实现：1.windows :netstat -aon|findstr 3306 linux:netstat -an|grep 3306 2.对端口发数据包扫： 命令：wget ip 80 telnet ip 80 nc -vz ip 445 3.工具 扫描主机，端口，探测操作系统，软件版本zenmap nmap 使用文档  dirsearch脚本 masscan 4.端口类型： 文件共享： 远程连接： web应用： 数据库服务 网路常见端口 特殊服务端口 </div></div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Xhani</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/14/deassembly-md/" title="常见汇编">常见汇编</a><time datetime="2024-09-14T11:38:38.000Z" title="发表于 2024-09-14 19:38:38">2024-09-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/06/04/1/" title="1">1</a><time datetime="2024-06-04T02:49:23.000Z" title="发表于 2024-06-04 10:49:23">2024-06-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/23/scaning-directory/" title="scaning_directory">scaning_directory</a><time datetime="2024-05-23T08:51:43.000Z" title="发表于 2024-05-23 16:51:43">2024-05-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/23/%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/" title="其他常用的网络空间搜索引擎">其他常用的网络空间搜索引擎</a><time datetime="2024-05-23T08:33:54.000Z" title="发表于 2024-05-23 16:33:54">2024-05-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/23/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E2/" title="网络空间搜索引擎2">网络空间搜索引擎2</a><time datetime="2024-05-23T07:36:17.000Z" title="发表于 2024-05-23 15:36:17">2024-05-23</time></div></div></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
       
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://darlingxhani.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
+    <ul class="card-archive-list">
   
-    <article id="post-deassembly-md" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/09/14/deassembly-md/" class="article-date">
-  <time class="dt-published" datetime="2024-09-14T11:38:38.000Z" itemprop="datePublished">2024-09-14</time>
-</a>
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/09/">
+          <span class="card-archive-list-date">九月 2024</span>
+          <span class="card-archive-list-count">1</span>
+        </a>
+      </li>
     
-  </div>
-  <div class="article-inner">
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/06/">
+          <span class="card-archive-list-date">六月 2024</span>
+          <span class="card-archive-list-count">1</span>
+        </a>
+      </li>
     
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2024/05/">
+          <span class="card-archive-list-date">五月 2024</span>
+          <span class="card-archive-list-count">11</span>
+        </a>
+      </li>
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/09/14/deassembly-md/">常见汇编</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="if-else"><a href="#if-else" class="headerlink" title="if_else:"></a>if_else:</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">		操作1</span><br><span class="line">		cmp a,b</span><br><span class="line">		je 0x0001</span><br><span class="line">		操作2 Yes</span><br><span class="line">		jmp 0x0002</span><br><span class="line">0x0001:	操作3 NO</span><br><span class="line">0x0002:</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2024/09/14/deassembly-md/Users\王俊阔\文件档案\BlogCount\source_posts\deassembly-md\image-20240914194223239.png" alt="image-20240914194223239"></p>
-<h1 id="switch-case"><a href="#switch-case" class="headerlink" title="switch case:"></a>switch case:</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">		操作1</span><br><span class="line">		cmp  a,400</span><br><span class="line">		jg 0x000000</span><br><span class="line">		cmp a,400</span><br><span class="line">		je 0x000001</span><br><span class="line">		cmp a,300</span><br><span class="line">		je 0x00002</span><br><span class="line">		cmp a,200</span><br><span class="line">		je 0x0003</span><br><span class="line">		jmp 0x0004           </span><br><span class="line">		操作2  </span><br><span class="line">		jmp 0x0004         //实际上是有break;</span><br><span class="line">		操作3</span><br><span class="line">		jmp 0x0004 </span><br><span class="line">		操作4</span><br><span class="line">		jmp 0x0004</span><br><span class="line">		操作5</span><br><span class="line">0x0004:</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2024/09/14/deassembly-md/Users\王俊阔\文件档案\BlogCount\source_posts\deassembly-md\image-20240914194329734.png" alt="image-20240914194329734"></p>
-<h1 id="while"><a href="#while" class="headerlink" title="while()"></a>while()</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">0x0000: cmp a,100</span><br><span class="line">      	jle 0x00001</span><br><span class="line">		操作</span><br><span class="line">		jmp 0x0000</span><br><span class="line">0x00001:</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2024/09/14/deassembly-md/Users\王俊阔\文件档案\BlogCount\source_posts\deassembly-md\image-20240914195237570.png" alt="image-20240914195237570"></p>
-<h1 id="do-while"><a href="#do-while" class="headerlink" title="do  while()"></a>do  while()</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0x00001:操作</span><br><span class="line">		cmp a,100</span><br><span class="line">		jle  0x00001</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2024/09/14/deassembly-md/Users\王俊阔\文件档案\BlogCount\source_posts\deassembly-md\image-20240914195647559.png" alt="image-20240914195647559"></p>
-<h1 id="for"><a href="#for" class="headerlink" title="for()"></a>for()</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">		mov dowrd ptr[ebp-8],1</span><br><span class="line">		jmp 0x00001</span><br><span class="line">0x00003:操作</span><br><span class="line">       	add/sub/mul/div ecx,dowrd ptr[ebp-8]</span><br><span class="line">0x00001:cmp ecx,dowrd ptr[ebp-8]</span><br><span class="line">		jg 0x00002</span><br><span class="line">		操作</span><br><span class="line">		jmp 0x00003</span><br><span class="line">0x00002:</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2024/09/14/deassembly-md/Users\王俊阔\文件档案\BlogCount\source_posts\deassembly-md\image-20240914195836157.png" alt="image-20240914195836157"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://darlingxhani.github.io/2024/09/14/deassembly-md/" data-id="cm12460za0001vsksc9xla2k3" data-title="常见汇编" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/06/04/1/" class="article-date">
-  <time class="dt-published" datetime="2024-06-04T02:49:23.000Z" itemprop="datePublished">2024-06-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/06/04/1/">1</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>出行需求：<br>$$<br>Dij&#x3D;(pi+pj)(1&#x2F;d^2ij)<br>$$</p>
-<ul>
-<li><em>ρi</em> 和 𝜌𝑗 分别为区域 𝑖区域 𝑗 的人口密度。</li>
-<li>D𝑖𝑗为区域 𝑖和区域 𝑗 之间的曼哈顿距离。</li>
-</ul>
-<p>$$<br>Dij&#x3D;|ix-jx|+|iy-jy|<br>$$</p>
-<p>最优函数：<br>$$<br>Maximize  ∑ i ∑ j Dij*(v1<em>xij&#x2F;t1+v2</em>yij&#x2F;t2)<br>$$</p>
-<ul>
-<li>地铁：速度快，容量大，建设成本高，速度为 𝑣1&#x3D;60 km&#x2F;h，运行时间t1&#x3D;1建设成本为 1 亿元&#x2F;公里。</li>
-<li>公交：速度较慢，容量较小，建设成本低，速度为 𝑣2&#x3D;30 km&#x2F;h，运行时间t2&#x3D;3h建设成本为 0.1 亿元&#x2F;公里。</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://darlingxhani.github.io/2024/06/04/1/" data-id="cm12460z70000vsks7zb65iuj" data-title="1" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-scaning-directory" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/05/23/scaning-directory/" class="article-date">
-  <time class="dt-published" datetime="2024-05-23T08:51:43.000Z" itemprop="datePublished">2024-05-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/05/23/scaning-directory/">scaning_directory</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="1-什么是目录扫描"><a href="#1-什么是目录扫描" class="headerlink" title="1.什么是目录扫描"></a>1.什么是目录扫描</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://darlingxhani.github.io/2024/05/23/scaning-directory/" data-id="clwj4ido9000010wz0jrb3wjt" data-title="scaning_directory" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-其他常用的网络空间搜索引擎" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/05/23/%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/" class="article-date">
-  <time class="dt-published" datetime="2024-05-23T08:33:54.000Z" itemprop="datePublished">2024-05-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/05/23/%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/">其他常用的网络空间搜索引擎</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="censys和zoomeye-国产"><a href="#censys和zoomeye-国产" class="headerlink" title="censys和zoomeye(国产)"></a>censys和zoomeye(国产)</h1><h2 id="1-censys"><a href="#1-censys" class="headerlink" title="1.censys"></a>1.censys</h2><h2 id="2-zoomeye-网络空间资源测绘"><a href="#2-zoomeye-网络空间资源测绘" class="headerlink" title="2.zoomeye(网络空间资源测绘)"></a>2.zoomeye(网络空间资源测绘)</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://darlingxhani.github.io/2024/05/23/%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/" data-id="clwj4idoc000210wzeuimey9j" data-title="其他常用的网络空间搜索引擎" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-网络空间搜索引擎2" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/05/23/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E2/" class="article-date">
-  <time class="dt-published" datetime="2024-05-23T07:36:17.000Z" itemprop="datePublished">2024-05-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/05/23/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E2/">网络空间搜索引擎2</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="shodan"><a href="#shodan" class="headerlink" title="shodan"></a>shodan</h1><p>使用文档：<a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/2070?time__1311=n4+xnieDqmqqB7DuDBTroGkYDkQG8Y/RB/+eD&alichlgref=https://www.google.com/">https://xz.aliyun.com/t/2070?time__1311=n4%2BxnieDqmqqB7DuDBTroGkYDkQG8Y%2FRB%2F%2BeD&amp;alichlgref=https%3A%2F%2Fwww.google.com%2F</a></p>
-<p>shodan的查询快捷语句：<a target="_blank" rel="noopener" href="https://github.com/jakejarvis/awesome-shodan-queries">https://github.com/jakejarvis/awesome-shodan-queries</a></p>
-<p>shodan的py脚本：<a target="_blank" rel="noopener" href="https://github.com/random-robbie/My-Shodan-Scripts">https://github.com/random-robbie/My-Shodan-Scripts</a></p>
-<h2 id="1-shodan-io"><a href="#1-shodan-io" class="headerlink" title="1.shodan.io"></a>1.shodan.io</h2><p><strong>shodan搜索使用文档：<a target="_blank" rel="noopener" href="https://help.shodan.io/the-basics/search-query-fundamentals">https://help.shodan.io/the-basics/search-query-fundamentals</a></strong></p>
-<p>kali上内置shodan</p>
-<h2 id="2-shodan的功能："><a href="#2-shodan的功能：" class="headerlink" title="2.shodan的功能："></a>2.shodan的功能：</h2><ul>
-<li>地图</li>
-<li>监控</li>
-<li>截图</li>
-<li>过滤器</li>
-</ul>
-<h2 id="3-shodan常见命令："><a href="#3-shodan常见命令：" class="headerlink" title="3.shodan常见命令："></a>3.shodan常见命令：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shodan host 172.67.167.88</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shodan count apache</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shodan stats port:445 SMB</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://darlingxhani.github.io/2024/05/23/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E2/" data-id="clwj4idob000110wz032m0mhb" data-title="网络空间搜索引擎2" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-网络空间搜索引擎1" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/05/23/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E1/" class="article-date">
-  <time class="dt-published" datetime="2024-05-23T07:07:23.000Z" itemprop="datePublished">2024-05-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/05/23/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E1/">网络空间搜索引擎1</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="1-什么是网络空间：Cyber-space"><a href="#1-什么是网络空间：Cyber-space" class="headerlink" title="1.什么是网络空间：Cyber space"></a>1.什么是网络空间：Cyber space</h2><p>搜索引擎：goole诞生————网页</p>
-<p>发展：图片 音乐 声音</p>
-<p>进一步：</p>
-<table>
-<thead>
-<tr>
-<th>网络系统</th>
-<th>网络设备</th>
-<th>工业系统</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>CDN</td>
-<td>手机</td>
-<td>交通信号灯  公园控制系统</td>
-</tr>
-<tr>
-<td>IDS</td>
-<td>平板</td>
-<td>核电站</td>
-</tr>
-<tr>
-<td>CMS</td>
-<td>交换机 路由器 网络摄像头</td>
-<td>加油站</td>
-</tr>
-<tr>
-<td>办公软件</td>
-<td>私人网盘</td>
-<td>电网</td>
-</tr>
-<tr>
-<td>数据库</td>
-<td>打印机  ATM 机器人</td>
-<td>企业大屏幕</td>
-</tr>
-</tbody></table>
-<h2 id="2-网络空间搜索引擎："><a href="#2-网络空间搜索引擎：" class="headerlink" title="2.网络空间搜索引擎："></a>2.网络空间搜索引擎：</h2><h5 id="怎么扫描：1-用网络工具：zmap-nmap-2-方式：IP库-枚举"><a href="#怎么扫描：1-用网络工具：zmap-nmap-2-方式：IP库-枚举" class="headerlink" title="怎么扫描：1.用网络工具：zmap nmap  2.方式：IP库 枚举"></a>怎么扫描：1.用网络工具：zmap nmap  2.方式：IP库 枚举</h5><p>怎么标识设备：</p>
-<ul>
-<li><p>ip:域名</p>
-</li>
-<li><p>MAC	</p>
-</li>
-<li><p>爬虫：url</p>
-</li>
-<li><p>开放系统</p>
-</li>
-<li><p>物理地址</p>
-</li>
-<li><p>操作系统</p>
-</li>
-<li><p>设备类型</p>
-</li>
-</ul>
-<h2 id="3-实行威胁地图：fireeye"><a href="#3-实行威胁地图：fireeye" class="headerlink" title="3.实行威胁地图：fireeye"></a>3.实行威胁地图：fireeye</h2><h2 id="4-安全性"><a href="#4-安全性" class="headerlink" title="4.安全性"></a>4.安全性</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://darlingxhani.github.io/2024/05/23/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E1/" data-id="clwixod3w000btgwz7c4rcllw" data-title="网络空间搜索引擎1" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Google-hacking" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/05/23/Google-hacking/" class="article-date">
-  <time class="dt-published" datetime="2024-05-23T06:12:50.000Z" itemprop="datePublished">2024-05-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/05/23/Google-hacking/">Google_hacking</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="1-语法工具：pdf文档：https-web-archive-org-web-20140822191407-http-www-boris-koch-de-wp-content-uploads-2011-01-Liste-Google-Hacking-pdf"><a href="#1-语法工具：pdf文档：https-web-archive-org-web-20140822191407-http-www-boris-koch-de-wp-content-uploads-2011-01-Liste-Google-Hacking-pdf" class="headerlink" title="1.语法工具：pdf文档：https://web.archive.org/web/20140822191407/http://www.boris-koch.de/wp-content/uploads/2011/01/Liste-Google-Hacking.pdf"></a>1.语法工具：pdf文档：<a target="_blank" rel="noopener" href="https://web.archive.org/web/20140822191407/http://www.boris-koch.de/wp-content/uploads/2011/01/Liste-Google-Hacking.pdf">https://web.archive.org/web/20140822191407/http://www.boris-koch.de/wp-content/uploads/2011/01/Liste-Google-Hacking.pdf</a></h2><h2 id="2-一些运算符："><a href="#2-一些运算符：" class="headerlink" title="2.一些运算符："></a>2.一些运算符：</h2><p><strong>完全匹配:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;网络安全&quot;</span><br></pre></td></tr></table></figure>
-
-<p><strong>任意词语：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 or 2</span><br></pre></td></tr></table></figure>
-
-<p><strong>不包含：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">burp_suite - xxx</span><br></pre></td></tr></table></figure>
-
-<p><strong>数字范围：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">number..number</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-高级语法"><a href="#3-高级语法" class="headerlink" title="3.高级语法"></a>3.高级语法</h2><p><strong>1.只搜索某个网站的内容：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">site:zhihu.com</span><br></pre></td></tr></table></figure>
-
-<p><strong>2.网页内容包括：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">allintext:Powered by Discuz</span><br><span class="line">intext：Powered by Discuz</span><br></pre></td></tr></table></figure>
-
-<h6 id="标题：是html网页标签的标题"><a href="#标题：是html网页标签的标题" class="headerlink" title="标题：是html网页标签的标题"></a>标题：是html网页标签的标题</h6><p> <strong>3.标题出现：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">intitle：</span><br><span class="line">allintitle:</span><br></pre></td></tr></table></figure>
-
-<p><strong>4.url地址包括：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">allinurl:admin.php</span><br><span class="line">inurl:index.php?id=1</span><br></pre></td></tr></table></figure>
-
-<p><strong>5.文件类型：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">filetype：pdf</span><br></pre></td></tr></table></figure>
-
-<p><strong>6.index of</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">intitle:index of</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-google语法数据库："><a href="#4-google语法数据库：" class="headerlink" title="4.google语法数据库："></a>4.google语法数据库：</h2><p><a target="_blank" rel="noopener" href="https://www.exploit-db.com/google-hacking-database">https://www.exploit-db.com/google-hacking-database</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/BullsEye0/google_dork_list">https://github.com/BullsEye0/google_dork_list</a></p>
-<h2 id="5-工具："><a href="#5-工具：" class="headerlink" title="5.工具："></a>5.工具：</h2><p>github搜索：Google hcaking </p>
-<p>​			Google dorks </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://darlingxhani.github.io/2024/05/23/Google-hacking/" data-id="clwixod3q0005tgwz9ohn1p7q" data-title="Google_hacking" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-WAF_difference" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/05/16/WAF_difference/" class="article-date">
-  <time class="dt-published" datetime="2024-05-16T07:20:54.000Z" itemprop="datePublished">2024-05-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/05/16/WAF_difference/">WAF_difference</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="WAF-web应用防火墙"><a href="#WAF-web应用防火墙" class="headerlink" title="WAF:web应用防火墙"></a>WAF:web应用防火墙</h1><h3 id="1-作用（简单的）"><a href="#1-作用（简单的）" class="headerlink" title="1.作用（简单的）"></a>1.作用（简单的）</h3><img src="/2024/05/16/WAF_difference/1.png" class title="image1">
-
-<h3 id="2-WAF识别思路："><a href="#2-WAF识别思路：" class="headerlink" title="2.WAF识别思路："></a>2.WAF识别思路：</h3><p>1.<a target="_blank" rel="noopener" href="https://github.com/0xInfection/Awesome-WAF">0xInfection&#x2F;Awesome-WAF: 🔥 Web-application firewalls (WAFs) from security standpoint. (github.com)</a></p>
-<p>2.<a target="_blank" rel="noopener" href="https://github.com/CSecGroup/wafid">CSecGroup&#x2F;wafid: Wafid identify and fingerprint Web Application Firewall (WAF) products. (github.com)</a></p>
-<h3 id="3-如何触发waf拦截："><a href="#3-如何触发waf拦截：" class="headerlink" title="3.如何触发waf拦截："></a>3.如何触发waf拦截：</h3><h5 id="1-工具：kali-wafw00f"><a href="#1-工具：kali-wafw00f" class="headerlink" title="1.工具：kali:wafw00f"></a>1.工具：kali:wafw00f</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wafw00f https://pinpai.smzdm.com/</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmap www.12306.cn --script=http-waf-detect.nse</span><br></pre></td></tr></table></figure>
-
-<p><strong>必须是动态地址</strong>：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlmap -u &quot;xxx.com?id=1&quot; --identify-waf</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://darlingxhani.github.io/2024/05/16/WAF_difference/" data-id="clwixod3u0008tgwz5h0daaor" data-title="WAF_difference" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-CDN-difference" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/05/16/CDN-difference/" class="article-date">
-  <time class="dt-published" datetime="2024-05-16T06:54:34.000Z" itemprop="datePublished">2024-05-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/05/16/CDN-difference/">CDN_difference</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="1-CDN是什么：CDN图解（秒懂-史上最全）-疯狂创客圈-博客园-cnblogs-com"><a href="#1-CDN是什么：CDN图解（秒懂-史上最全）-疯狂创客圈-博客园-cnblogs-com" class="headerlink" title="1.CDN是什么：CDN图解（秒懂 + 史上最全） - 疯狂创客圈 - 博客园 (cnblogs.com)"></a>1.CDN是什么：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/crazymakercircle/p/14978513.html">CDN图解（秒懂 + 史上最全） - 疯狂创客圈 - 博客园 (cnblogs.com)</a></h3><h3 id="2-如何获取CDN背后的真实ip"><a href="#2-如何获取CDN背后的真实ip" class="headerlink" title="2.如何获取CDN背后的真实ip"></a>2.如何获取CDN背后的真实ip</h3><p>1.ping</p>
-<ol start="2">
-<li></li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nslookup 域名</span><br></pre></td></tr></table></figure>
-
-<p>3.超级ping</p>
-<p>4.Kali工具:lbd</p>
-<p>5.国内：cdn.chinaz.com</p>
-<p>国外cdnplanet.com&#x2F;tools&#x2F;cdnfinder</p>
-<p>6.脚本：</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/boy-hack/w8fuckcdn/">https://github.com/boy-hack/w8fuckcdn/</a></p>
-<p><a target="_blank" rel="noopener" href="https://gitghub.com/3xp10it/xcdn">https://gitghub.com/3xp10it/xcdn</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://darlingxhani.github.io/2024/05/16/CDN-difference/" data-id="clwixod3l0001tgwzhj01esvc" data-title="CDN_difference" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-CMS-judgement" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/05/15/CMS-judgement/" class="article-date">
-  <time class="dt-published" datetime="2024-05-15T06:31:50.000Z" itemprop="datePublished">2024-05-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/05/15/CMS-judgement/">CMS_judgement</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="CMS的指纹识别"><a href="#CMS的指纹识别" class="headerlink" title="CMS的指纹识别"></a>CMS的指纹识别</h1><h2 id="1-识别对象："><a href="#1-识别对象：" class="headerlink" title="1.识别对象："></a>1.识别对象：</h2><h4 id="1-CMS信息：内容管理系统"><a href="#1-CMS信息：内容管理系统" class="headerlink" title="1.CMS信息：内容管理系统"></a>1.<strong>CMS信息</strong>：内容管理系统</h4><p>2.前端技术：</p>
-<p>3.开发语言</p>
-<p>4.web服务器</p>
-<p>5.应用服务器</p>
-<p>6.操作系统</p>
-<h4 id="7-CDN的信息"><a href="#7-CDN的信息" class="headerlink" title="7.CDN的信息"></a>7.CDN的信息</h4><h4 id="8-WAF信息"><a href="#8-WAF信息" class="headerlink" title="8.WAF信息"></a>8.WAF信息</h4><h2 id="2-CMS："><a href="#2-CMS：" class="headerlink" title="2.CMS："></a>2.CMS：</h2><p>各类开源的CMS：企业，博客，论坛，问答，知识百科，门户建站，在线教育建站，人才招聘网站</p>
-<h2 id="3-CMS识别思路："><a href="#3-CMS识别思路：" class="headerlink" title="3.CMS识别思路："></a>3.CMS识别思路：</h2><h6 id="1-版权信息"><a href="#1-版权信息" class="headerlink" title="1.版权信息"></a>1.版权信息</h6><h6 id="2-特定文件MD5值-https-github-com-Lucifer1993-cmsprint-blob-master-cmsprint-json"><a href="#2-特定文件MD5值-https-github-com-Lucifer1993-cmsprint-blob-master-cmsprint-json" class="headerlink" title="2.特定文件MD5值:(https://github.com/Lucifer1993/cmsprint/blob/master/cmsprint.json)"></a>2.特定文件MD5值:(<a target="_blank" rel="noopener" href="https://github.com/Lucifer1993/cmsprint/blob/master/cmsprint.json">https://github.com/Lucifer1993/cmsprint/blob/master/cmsprint.json</a>)</h6><h6 id="3-查看页面原代码-分析代码"><a href="#3-查看页面原代码-分析代码" class="headerlink" title="3.查看页面原代码:分析代码"></a>3.查看页面原代码:分析代码</h6><h6 id="4-查看特定文件分析：如网站的robots-txt文件"><a href="#4-查看特定文件分析：如网站的robots-txt文件" class="headerlink" title="4.查看特定文件分析：如网站的robots .txt文件"></a>4.查看特定文件分析：如网站的robots .txt文件</h6><h2 id="4-CMS工具："><a href="#4-CMS工具：" class="headerlink" title="4.CMS工具："></a>4.CMS工具：</h2><h6 id="1-kali工具：whatweb"><a href="#1-kali工具：whatweb" class="headerlink" title="1.kali工具：whatweb"></a>1.kali工具：whatweb</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`whatweb  -v www.coolshell.cn`</span><br></pre></td></tr></table></figure>
-
-
-
-<h6 id="2-浏览器插件：Wappalyzer-whatruns"><a href="#2-浏览器插件：Wappalyzer-whatruns" class="headerlink" title="2.浏览器插件：Wappalyzer,whatruns"></a>2.浏览器插件：Wappalyzer,whatruns</h6><h6 id="3-https-github-com-Tuhinshubhra-CMSeek"><a href="#3-https-github-com-Tuhinshubhra-CMSeek" class="headerlink" title="3.https://github.com/Tuhinshubhra/CMSeek"></a>3.<a target="_blank" rel="noopener" href="https://github.com/Tuhinshubhra/CMSeek">https://github.com/Tuhinshubhra/CMSeek</a></h6><h6 id="4-http-finger-tidesec-com"><a href="#4-http-finger-tidesec-com" class="headerlink" title="4.http://finger.tidesec.com/"></a>4.<a target="_blank" rel="noopener" href="http://finger.tidesec.com/">http://finger.tidesec.com/</a></h6>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://darlingxhani.github.io/2024/05/15/CMS-judgement/" data-id="clwixod3n0003tgwz27m1hpxl" data-title="CMS_judgement" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Use_nmap" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/05/14/Use_nmap/" class="article-date">
-  <time class="dt-published" datetime="2024-05-14T08:11:25.000Z" itemprop="datePublished">2024-05-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/05/14/Use_nmap/">namp的使用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="1-nmap的使用："><a href="#1-nmap的使用：" class="headerlink" title="1.nmap的使用："></a>1.nmap的使用：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_49998039/article/details/125242779"></a></h1><h3 id="1-类别："><a href="#1-类别：" class="headerlink" title="1.类别："></a>1.类别：</h3><p>open:端口开启</p>
-<p>filtered:被防火墙阻止扫描</p>
-<p>closed：端口关闭</p>
-<p>unfiltered：无法确定的</p>
-<h3 id="2-nmap的参数"><a href="#2-nmap的参数" class="headerlink" title="2.nmap的参数"></a>2.nmap的参数</h3><p>nmap -sV:版本检测</p>
-<p>-PN:绕过ping命令</p>
-<p>-O：操作系统检测，1-6</p>
-<p>-T：设置扫描速度</p>
-<p>-sP：主机存活性</p>
-<p>-Ss:SYN方式</p>
-<p>-ST:三次握手</p>
-<p>-SP:没有扫描</p>
-<p>-pn:🈲ping</p>
-<p>-Su:udp的数据包</p>
-<p>-sF:FIN的方式</p>
-<h3 id="3-范围内："><a href="#3-范围内：" class="headerlink" title="3.范围内："></a>3.范围内：</h3><p>192.168.1.1-4</p>
-<h3 id="4-注意其他工具的结合：masscan"><a href="#4-注意其他工具的结合：masscan" class="headerlink" title="4.注意其他工具的结合：masscan:"></a>4.注意其他工具的结合：masscan:<a target="_blank" rel="noopener" href="https://blog.csdn.net/2302_82189125/article/details/135999466"></a></h3><p>fofa.info，fofa-view插件</p>
-<h3 id="5-常见端口"><a href="#5-常见端口" class="headerlink" title="5.常见端口"></a>5.常见端口</h3><p>This is a img</p>
-<img src="/2024/05/14/Use_nmap/1.png" class title="image">
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://darlingxhani.github.io/2024/05/14/Use_nmap/" data-id="clwixod3t0007tgwz4mu78n28" data-title="namp的使用" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-端口信息" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/05/10/%E7%AB%AF%E5%8F%A3%E4%BF%A1%E6%81%AF/" class="article-date">
-  <time class="dt-published" datetime="2024-05-10T07:45:41.000Z" itemprop="datePublished">2024-05-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/05/10/%E7%AB%AF%E5%8F%A3%E4%BF%A1%E6%81%AF/">端口信息</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="1-端口扫描和代码实现："><a href="#1-端口扫描和代码实现：" class="headerlink" title="1.端口扫描和代码实现："></a>1.端口扫描和代码实现：</h2><p>1.<code>windows :netstat -aon|findstr 3306</code></p>
-<p><code>linux:netstat -an|grep 3306</code></p>
-<p>2.对端口发数据包扫：</p>
-<p>命令：<code>wget ip 80</code></p>
-<p><code>telnet ip 80</code></p>
-<p><code>nc -vz ip 445</code></p>
-<p>3.工具</p>
-<p>扫描主机，端口，探测操作系统，软件版本<strong>zenmap</strong></p>
-<p>nmap 使用文档 </p>
-<p><strong>dirsearch脚本</strong></p>
-<p><strong>masscan</strong></p>
-<p>4.端口类型：</p>
-<p>文件共享：</p>
-<p>远程连接：</p>
-<p>web应用：</p>
-<p>数据库服务</p>
-<p>网路常见端口</p>
-<p>特殊服务端口</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://darlingxhani.github.io/2024/05/10/%E7%AB%AF%E5%8F%A3%E4%BF%A1%E6%81%AF/" data-id="clwixod3v000atgwzfr1n8ocy" data-title="端口信息" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
-  </nav>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/09/">九月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/06/">六月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/05/">五月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/11/">十一月 2023</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2024/09/14/deassembly-md/">常见汇编</a>
-          </li>
-        
-          <li>
-            <a href="/2024/06/04/1/">1</a>
-          </li>
-        
-          <li>
-            <a href="/2024/05/23/scaning-directory/">scaning_directory</a>
-          </li>
-        
-          <li>
-            <a href="/2024/05/23/%E5%85%B6%E4%BB%96%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/">其他常用的网络空间搜索引擎</a>
-          </li>
-        
-          <li>
-            <a href="/2024/05/23/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E2/">网络空间搜索引擎2</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2024 Xhani<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+      <li class="card-archive-list-item">
+        <a class="card-archive-list-link" href="/archives/2023/11/">
+          <span class="card-archive-list-date">十一月 2023</span>
+          <span class="card-archive-list-count">1</span>
+        </a>
+      </li>
+    </ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">14</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-10-17T03:58:22.714Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2024 By Xhani</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索..." type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
