@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>web_blog</title>
+  <title>XhaniのB10g</title>
   
   
   <link href="https://darlingxhani.github.io/atom.xml" rel="self"/>
@@ -29,29 +29,6 @@
       
       
     <summary type="html">&lt;h1 id=&quot;if-else&quot;&gt;&lt;a href=&quot;#if-else&quot; class=&quot;headerlink&quot; title=&quot;if_else:&quot;&gt;&lt;/a&gt;if_else:&lt;/h1&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td </summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>1</title>
-    <link href="https://darlingxhani.github.io/2024/06/04/1/"/>
-    <id>https://darlingxhani.github.io/2024/06/04/1/</id>
-    <published>2024-06-04T02:49:23.000Z</published>
-    <updated>2024-06-04T03:41:23.369Z</updated>
-    
-    <content type="html"><![CDATA[<p>出行需求：<br>$$<br>Dij&#x3D;(pi+pj)(1&#x2F;d^2ij)<br>$$</p><ul><li><em>ρi</em> 和 𝜌𝑗 分别为区域 𝑖区域 𝑗 的人口密度。</li><li>D𝑖𝑗为区域 𝑖和区域 𝑗 之间的曼哈顿距离。</li></ul><p>$$<br>Dij&#x3D;|ix-jx|+|iy-jy|<br>$$</p><p>最优函数：<br>$$<br>Maximize  ∑ i ∑ j Dij*(v1<em>xij&#x2F;t1+v2</em>yij&#x2F;t2)<br>$$</p><ul><li>地铁：速度快，容量大，建设成本高，速度为 𝑣1&#x3D;60 km&#x2F;h，运行时间t1&#x3D;1建设成本为 1 亿元&#x2F;公里。</li><li>公交：速度较慢，容量较小，建设成本低，速度为 𝑣2&#x3D;30 km&#x2F;h，运行时间t2&#x3D;3h建设成本为 0.1 亿元&#x2F;公里。</li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;出行需求：&lt;br&gt;$$&lt;br&gt;Dij&amp;#x3D;(pi+pj)(1&amp;#x2F;d^2ij)&lt;br&gt;$$&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;ρi&lt;/em&gt; 和 𝜌𝑗 分别为区域 𝑖区域 𝑗 的人口密度。&lt;/li&gt;
-&lt;li&gt;D𝑖𝑗为区域 𝑖和区域 𝑗 之间的曼哈</summary>
       
     
     
